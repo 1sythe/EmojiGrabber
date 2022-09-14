@@ -17,10 +17,8 @@ async def on_ready():
 
 
 @bot.command()
-async def copy(ctx, arg1, arg2):
-    numeric_filter = filter(str.isdigit, arg1)
-    filterid = "".join(numeric_filter)
-    name = arg2
+async def copy(ctx, emoji, name):
+    filterid = emoji.split(":")[2].replace(">", "")
 
     embed = discord.Embed(
         title="copying emoji..."
